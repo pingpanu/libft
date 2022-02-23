@@ -6,24 +6,26 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 10:43:51 by user              #+#    #+#             */
-/*   Updated: 2022/02/23 11:31:39 by user             ###   ########.fr       */
+/*   Updated: 2022/02/24 02:04:03 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
+#include <stdio.h>
 
 char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
     size_t  n;
     size_t  i;
 
-    i = 0;
     n = ft_strlen(needle);
-    while (haystack[i] && i <= len)
+    if (n == 0)
+        return ((char*)haystack);
+    i = 0;
+    while (haystack[i] && i < len)
     {
-        if (!ft_memcmp(haystack++,needle,n))
-            return ((char*) (haystack - 1));
+        if (!ft_strncmp(&haystack[i], needle, n))
+            return ((char*) (haystack + i));
         i++;
     }
     return (NULL);
@@ -31,17 +33,13 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 /*
 int main()
 {
-    char string[64] = "This is a test string for testing ft_strnstr";
-    char *p;
+    char    haystack[30] = "aaabcabcd";
+    char    *p1;
+    char    *p2;
+    p1 = strnstr(haystack,"cd",8);
+    p2 = ft_strnstr(haystack,"cd",8);
 
-    p = ft_strnstr(string,"test",64);
-
-    if(p)
-    {
-        printf("String found:\n");
-        printf("First occurrence of string \"test\" in \"%s\" is:\n%s\n",string,p);
-    }
-    else
-        printf("String not found!\n");
+    printf("strnstr result = %s\n",p1);
+    printf("ft_strnstr result = %s\n",p2);
     return (0);
 }*/
