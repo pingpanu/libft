@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:09:20 by user              #+#    #+#             */
-/*   Updated: 2022/02/22 13:54:47 by user             ###   ########.fr       */
+/*   Updated: 2022/02/23 10:19:15 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 #include <stdio.h>
 #include <stddef.h>
+#include <stdlib.h>
 
 /*character comparison*/
 int         ft_isalpha(int c);
