@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:09:20 by user              #+#    #+#             */
-/*   Updated: 2022/02/24 02:37:04 by user             ###   ########.fr       */
+/*   Updated: 2022/02/24 22:42:16 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char    *ft_strdup(const char *s1);
 /*memory function*/
 int         ft_memcmp(const void *s1, const void *s2, size_t n);
 void    *ft_memset(void *b, int c, size_t len);
-void    *ft_memcpy(void *dst, const void *src, size_t n);
+void    *ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
 void    *ft_memchr(const void *s, int c, size_t len);
 void    *ft_memmove(void *dst, const void *src, size_t len);
 void    ft_bzero(void *s, size_t n);
