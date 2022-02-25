@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:09:20 by user              #+#    #+#             */
-/*   Updated: 2022/02/24 23:29:58 by user             ###   ########.fr       */
+/*   Updated: 2022/02/26 00:46:35 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char    *ft_itoa(int n);
 char    *ft_strmapi(char const *s, char (*f) (unsigned int, char));
 void    ft_striteri(char *s, void (*f) (unsigned int, char*));
 /*additional function - fd*/
-void    ft_putchar_ft(char c, int fd);
+void    ft_putchar_fd(char c, int fd);
 void    ft_putstr_fd(char *s, int fd);
 void    ft_putendl_fd(char *s, int fd);
 void    ft_putnbr_fd(int n, int fd);
