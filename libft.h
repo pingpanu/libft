@@ -6,13 +6,13 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:09:20 by user              #+#    #+#             */
-/*   Updated: 2022/02/26 00:46:35 by user             ###   ########.fr       */
+/*   Updated: 2022/02/26 00:57:25 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-#include <stdio.h>
+#include <unistd.h>
 #include <stddef.h>
 #include <stdlib.h>
 
