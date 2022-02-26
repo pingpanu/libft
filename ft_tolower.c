@@ -6,14 +6,14 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 14:02:58 by user              #+#    #+#             */
-/*   Updated: 2022/02/22 14:03:32 by user             ###   ########.fr       */
+/*   Updated: 2022/02/26 14:35:52 by pingpanu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    if (c >= 65 && c <= 90)
-        return (c + 32);
-    else
-        return (c);
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	else
+		return (c);
 }
