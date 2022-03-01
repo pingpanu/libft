@@ -6,31 +6,30 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 14:09:24 by user              #+#    #+#             */
-/*   Updated: 2022/02/22 14:46:33 by user             ###   ########.fr       */
+/*   Updated: 2022/02/26 14:13:53 by pingpanu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-    size_t  i;
-    size_t  slen;
+	size_t	i;
+	size_t	slen;
 
-    i = 0;
-    slen = ft_strlen(s);
-    if (c < 31)
-        return ((char *)s + slen);
-    else if (c > 126)
-        return ((char *)s);
-    else
-    {
-        while (s[i] != c)
-        {
-            if (i == slen)
-                return (NULL);
-            i++;
-        }
-        return ((char *)s + i);
-    }
+	i = 0;
+	slen = ft_strlen(s);
+	if (c < 31)
+		return ((char *)s + slen);
+	else if (c > 126)
+		return ((char *)s);
+	else
+	{
+		while (s[i++] != c)
+		{
+			if (i == slen)
+				return (NULL);
+		}
+		return ((char *)s + i);
+	}
 }

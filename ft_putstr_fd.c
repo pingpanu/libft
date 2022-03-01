@@ -6,20 +6,20 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 01:00:08 by user              #+#    #+#             */
-/*   Updated: 2022/02/26 01:13:49 by user             ###   ########.fr       */
+/*   Updated: 2022/02/26 14:12:15 by pingpanu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-    if (fd >= 0)
-    {
-        while (*s)
-        {
-            write(fd, s, 1);
-            s++;
-        }
-    }
+	if (fd >= 0)
+	{
+		while (*s)
+		{
+			write(fd, s, 1);
+			s++;
+		}
+	}
 }
