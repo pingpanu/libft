@@ -6,7 +6,7 @@
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 22:50:57 by user              #+#    #+#             */
-/*   Updated: 2022/03/02 17:20:25 by user             ###   ########.fr       */
+/*   Updated: 2022/03/02 19:39:12 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,26 @@ static int  wordlen(const char *s, size_t k, char c)
     int len;
 
     len = 0;
-    while (*(s + k) != c)
+    while (*(s + k) && *(s + k) != c)
     {
         k++;
         len++;
     }
     return (len);
+}
+
+static char    **ft_error(char **array)
+{
+    unsigned int    i;
+
+    i = 0;
+    while (array[i])
+    {
+        free(array[i]);
+        i++;
+    }
+    free(array);
+    return (NULL);
 }
 
 char    **ft_split(char const *s, char c)
@@ -50,30 +64,24 @@ char    **ft_split(char const *s, char c)
     int     words; //no of words in s
     int     i; //pointer to array
     int     k; //pointer to s
-    int     len; //split[i] length
-
-    if (!s)
-        return (NULL);
+    int     len;
+    
     words = no_of_words(s,c);
     split = (char **)malloc(sizeof(char *) * (words + 1));
-    if (!split)
+    if (!s|| !split)
         return (NULL);
     k = 0;
-    i = 0;
-    while (i < words)
+    i = -1;
+    while (++i < words)
     {
         while (*(s + k) == c)
             k++;
-        if (*(s + k) != c)
-        {
-            len = wordlen(s, k, c);
-            split[i] = (char *)malloc(sizeof(char) * (len + 1));
-            /*if (!split)
-                return (ft_error);*/
-            ft_strlcpy(split[i], s + k, len);
-            k = k + len;
-        }
-        i++;
+        len = wordlen(s, k, c);
+        split[i] = (char *)malloc(sizeof(char) * (len + 1));
+        if (!split[i])
+            return (ft_error(split));
+        ft_strlcpy(split[i], s + k, len + 1);
+        k = k + len;
     }
     split[i] = '\0';
     return (split);
