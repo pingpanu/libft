@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/22 14:20:42 by user              #+#    #+#             */
-/*   Updated: 2022/03/02 17:37:22 by user             ###   ########.fr       */
+/*   Created: 2022/03/03 23:12:14 by pingpanu          #+#    #+#             */
+/*   Updated: 2022/03/03 23:52:13 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t n)
+int ft_lstsize(t_list *lst)
 {
-	size_t	i;
+    int     count;
 
-	i = 0;
-	if (n == 0)
-		return (ft_strlen(src));
-	while (src[i] && i < (n - 1))
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	while (src[i])
-		i++;
-	return (i);
+    count = 0;
+    while (lst)
+    {
+        lst = lst->next;
+        count++;
+    }
+    return (count);
 }
