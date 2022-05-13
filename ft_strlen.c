@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/22 14:08:10 by user              #+#    #+#             */
-/*   Updated: 2022/02/26 14:29:05 by pingpanu         ###   ########.fr       */
+/*   Created: 2022/02/22 14:08:10 by pingpanu          #+#    #+#             */
+/*   Updated: 2022/03/25 23:03:02 by user             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t	len;
+	size_t		count;
 
-	len = 0;
-	while (s[len])
-		len++;
-	return (len);
+	count = 0;
+	while (s[count])
+		count++;
+	return (count);
 }
