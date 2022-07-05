@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pingpanu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/28 22:17:20 by pingpanu          #+#    #+#             */
-/*   Updated: 2022/03/05 23:13:43 by pingpanu         ###   ########.fr       */
+/*   Created: 2022/02/28 22:31:19 by pingpanu          #+#    #+#             */
+/*   Updated: 2022/02/28 22:38:10 by pingpanu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*alme;
-	size_t	i;
+	char	*copy;
+	char	*ret;
+	size_t	bytes;
 
-	i = 0;
-	alme = malloc (count * size);
-	if (!alme)
+	if (!s)
 		return (NULL);
-	while (i < count * size)
+	if (start >= (unsigned int)ft_strlen(s))
 	{
-		alme[i] = 0;
-		i++;
+		len = 0;
+		start = 0;
 	}
-	return (alme);
+	bytes = len;
+	if (len >= ft_strlen(s))
+		bytes = (ft_strlen(s) - (size_t)start);
+	copy = malloc(sizeof(char) * (bytes + 1));
+	if (!copy)
+		return (NULL);
+	ret = copy;
+	while (s[start] && len--)
+		*copy++ = s[start++];
+	*copy = '\0';
+	return (ret);
 }

@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_exist.c                                         :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: pingpanu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/07 00:31:54 by user              #+#    #+#             */
-/*   Updated: 2022/04/07 00:35:11 by user             ###   ########.fr       */
+/*   Created: 2022/02/28 22:21:04 by pingpanu          #+#    #+#             */
+/*   Updated: 2022/02/28 22:21:06 by pingpanu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_exist(const char *str, char c)
+void	*ft_memset(void *b, int c, size_t len)
 {
-    while (*str)
-    {
-        if (*str == c)
-            return (1);
-        str++;
-    }
-    return (0);
+	char	*buc;
+	size_t	i;
+
+	i = 0;
+	buc = (char *)b;
+	while (i < len)
+		buc[i++] = c;
+	return (buc);
 }

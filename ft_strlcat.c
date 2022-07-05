@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pingpanu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/28 22:22:05 by pingpanu          #+#    #+#             */
-/*   Updated: 2022/03/05 12:25:31 by pingpanu         ###   ########.fr       */
+/*   Created: 2022/02/28 22:23:08 by pingpanu          #+#    #+#             */
+/*   Updated: 2022/02/28 22:23:12 by pingpanu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+size_t	ft_strlcat(char *dst, const char *src, size_t n)
 {
-	if (fd >= 0 && s)
+	size_t	d_len;
+	size_t	s_len;
+	size_t	offset;
+	size_t	i;
+
+	d_len = ft_strlen(dst);
+	s_len = ft_strlen(src);
+	offset = d_len;
+	i = 0;
+	if (n == 0)
+		return (s_len);
+	if (n <= d_len)
+		return (s_len + n);
+	while (src[i] && (offset + i) < (n -1))
 	{
-		while (*s)
-		{
-			write(fd, s, 1);
-			s++;
-		}
+		dst[offset + i] = src[i];
+		i++;
 	}
+	dst[offset + i] = '\0';
+	return (s_len + offset);
 }
